@@ -1,0 +1,10 @@
+.navbar {
+  grid-area: navbar;
+  background-color: antiquewhite;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

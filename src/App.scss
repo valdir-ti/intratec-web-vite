@@ -1,4 +1,10 @@
 .App {
-  width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-areas:
+    "sidebar navbar navbar"
+    "sidebar dashboard dashboard"
+    "footer footer footer";
 }

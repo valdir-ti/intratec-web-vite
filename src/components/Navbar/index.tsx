@@ -1,3 +1,10 @@
+import "./styles.scss";
+
 export const Navbar = () => {
-  return <div>Navbar</div>;
+  return (
+    <nav className="navbar">
+      <div className="button">Button</div>
+      <div className="menu">Menu</div>
+    </nav>
+  );
 };

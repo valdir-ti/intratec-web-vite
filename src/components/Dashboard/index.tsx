@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 export const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return <div className="dashboard">Dashboard</div>;
 };
