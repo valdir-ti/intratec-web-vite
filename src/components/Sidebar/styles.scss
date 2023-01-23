@@ -4,6 +4,9 @@
   height: 100vh;
   width: 16rem;
 
+  @media only screen and (max-width: 880px) {
+    width: 12rem;
+  }
   @media only screen and (max-width: 550px) {
     display: none;
   }
