@@ -1,7 +1,6 @@
 .App {
   display: grid;
   height: 100vh;
-  grid-template-columns: 16rem 1fr;
   grid-template-rows: 4rem 1fr 3rem;
   grid-template-areas:
     "sidebar navbar navbar"
@@ -9,7 +8,7 @@
     "sidebar footer footer";
 
   @media only screen and (max-width: 1200px) {
-    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-template-columns: 16rem 1fr 1fr;
     grid-template-rows: 4rem 1fr 3rem;
     grid-template-areas:
       "sidebar navbar navbar"
@@ -18,7 +17,7 @@
   }
 
   @media only screen and (max-width: 880px) {
-    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-template-columns: 12rem 1fr 1fr;
     grid-template-rows: 4rem 3fr 3rem;
     grid-template-areas:
       "sidebar navbar navbar"
@@ -27,11 +26,31 @@
   }
 
   @media only screen and (max-width: 550px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 4rem 1fr 3rem;
     grid-template-areas:
-      "navbar"
-      "dashboard"
-      "footer";
+      "sidebar navbar"
+      "sidebar dashboard"
+      "sidebar footer";
+  }
+
+  &-open {
+    grid-template-columns: 16rem 1fr;
+    @media only screen and (max-width: 880px) {
+      grid-template-columns: 12rem 1fr 1fr;
+    }
+    @media only screen and (max-width: 550px) {
+      grid-template-columns: 0 1fr;
+    }
+  }
+
+  &-close {
+    grid-template-columns: 5rem 1fr;
+    @media only screen and (max-width: 880px) {
+      grid-template-columns: 5rem 1fr 1fr;
+    }
+    @media only screen and (max-width: 550px) {
+      grid-template-columns: auto 1fr;
+    }
   }
 }

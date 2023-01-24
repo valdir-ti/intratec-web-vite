@@ -1,10 +1,19 @@
+import { useContext } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+
+import { SidebarContext } from "../../context/sidebar/sidebarContext";
 
 import "./styles.scss";
 
 export const Navbar = () => {
+  const sidebarContext = useContext(SidebarContext);
+  const {
+    state: { open },
+    dispatch,
+  } = sidebarContext;
+
   function handleToggleSidebar() {
-    alert("Toggle sidebar");
+    dispatch({ type: "TOGGLE_SIDEBAR" });
   }
 
   return (
