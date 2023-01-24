@@ -1,4 +1,9 @@
 .dashboard {
   grid-area: dashboard;
+  overflow: auto;
   background-color: #d0b9e5;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
 }
