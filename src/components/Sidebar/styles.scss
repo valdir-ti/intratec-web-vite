@@ -26,4 +26,15 @@
       margin-left: -12rem;
     }
   }
+
+  .close-button {
+    display: none;
+    @media only screen and (max-width: 550px) {
+      display: block;
+      font-weight: 300;
+      font-size: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
 }
