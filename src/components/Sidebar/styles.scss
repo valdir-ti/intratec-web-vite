@@ -27,14 +27,29 @@
     }
   }
 
+  .company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    position: relative;
+  }
+
+  .company-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
   .close-button {
     display: none;
     @media only screen and (max-width: 550px) {
       display: block;
       font-weight: 300;
-      font-size: 10px;
-      margin-right: 10px;
+      font-size: 0.8rem;
       cursor: pointer;
+      position: absolute;
+      right: 0.2rem;
+      top: 0.5rem;
     }
   }
 }

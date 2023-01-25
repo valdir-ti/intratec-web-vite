@@ -17,8 +17,10 @@ export const Sidebar = () => {
 
   return (
     <div className={`sidebar ${open ? "sidebar-open" : "sidebar-close"}`}>
-      <div className="company-name">
-        {open ? "Intratec Tecnologia" : "Intratec"}
+      <div className="company">
+        <p className="company-name">
+          {open ? "Intratec Tecnologia" : "Intratec"}
+        </p>
         <Close onClick={handleClose} className="close-button" />
       </div>
       <div className="menu">Menu</div>
