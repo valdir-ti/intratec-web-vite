@@ -3,9 +3,14 @@ import { Close } from "@mui/icons-material";
 
 import { SidebarContext } from "../../context/sidebar/sidebarContext";
 
-import "./styles.scss";
+// import "./styles.scss";
 
-export const Sidebar = () => {
+type SideBarProps = {
+  toggleTheme: (theme: string) => void;
+  theme: any;
+};
+
+export const Sidebar = ({ toggleTheme, theme }: SideBarProps) => {
   const {
     state: { open },
     dispatch: SidebarDispatch,
@@ -13,6 +18,14 @@ export const Sidebar = () => {
 
   function handleClose() {
     SidebarDispatch({ type: "TOGGLE_SIDEBAR" });
+  }
+
+  function handleTheme() {
+    if (theme.title === "light") {
+      toggleTheme("dark");
+    } else {
+      toggleTheme("light");
+    }
   }
 
   return (
@@ -23,7 +36,10 @@ export const Sidebar = () => {
         </p>
         <Close onClick={handleClose} className="close-button" />
       </div>
-      <div className="menu">Menu</div>
+      <div className="menu">
+        Menu
+        <button onClick={handleTheme}>Theme</button>
+      </div>
     </div>
   );
 };

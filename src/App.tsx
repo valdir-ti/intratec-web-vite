@@ -1,26 +1,48 @@
-import { useContext } from "react";
+import { ThemeProvider, DefaultTheme } from "styled-components";
 
-import { SidebarContext } from "./context/sidebar/sidebarContext";
+import { SidebarProvider } from "./context/sidebar/sidebarContext";
+
+import usePersistedState from "./hooks/usePersistedState";
 
 import { Dashboard } from "./components/Dashboard";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 
-import "./App.scss";
+import dark from "./styles/themes/dark";
+import light from "./styles/themes/light";
+
+import { GlobalStyle } from "./styles/global";
+
+import { Page, Nav, Side } from "./styles";
 
 function App() {
-  const {
-    state: { open },
-  } = useContext(SidebarContext);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);
+
+  const toggleTheme = (theme: string) => {
+    if (theme === "light") {
+      setTheme(light);
+    } else {
+      setTheme(dark);
+    }
+  };
 
   return (
-    <div className={`App ${open ? "App-open" : "App-close"}`}>
-      <Navbar />
-      <Sidebar />
-      <Dashboard />
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <SidebarProvider>
+        <GlobalStyle />
+        <Page>
+          <Nav>
+            <Navbar toggleTheme={toggleTheme} theme={theme} />
+          </Nav>
+          <Side>
+            <Sidebar toggleTheme={toggleTheme} theme={theme} />
+          </Side>
+          {/* <Dashboard />
+          <Footer /> */}
+        </Page>
+      </SidebarProvider>
+    </ThemeProvider>
   );
 }
 

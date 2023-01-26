@@ -1,5 +1,5 @@
 import { Card } from "../Card";
-import "./styles.scss";
+// import "./styles.scss";
 
 export const Dashboard = () => {
   return (
